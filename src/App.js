@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Route, Switch } from "react-router-dom";
+
+const my404 = () => {
+  return <div>Page does not exist :-o</div>;
+};
+
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      id: "",
+      username: "",
+      password: "",
+      email: "",
+      loading: true,
+      isAuth: false
+    };
+  }
+
+  render() {
+    return (
+      <main>
+        {this.state.isAuth}
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={props => <Login {...props} logIn={this.logIn} />}
+          />
+          <Route
+            exact
+            path="/register"
+            render={props => <Register {...props} register={this.register} />}
+          />
+          <Route
+            exact
+            path="/profile"
+            render={props => <Profile {...props} userInfo={this.state} />}
+          />
+        </Switch>
+      </main>
+    );
+  }
 }
 
 export default App;
