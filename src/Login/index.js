@@ -81,7 +81,7 @@ class Login extends Component {
               Password:
               <Form.Input
                 flud
-                icon="asterisk"
+                icon="lock"
                 iconPosition="left"
                 placeholder="password"
                 type="text"
