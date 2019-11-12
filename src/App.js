@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import { Route, Switch } from "react-router-dom";
 import Login from "./Login";
+import Register from "./Register";
+import Profile from "./Profile";
 
 const my404 = () => {
   return <div>Page does not exist :-o</div>;
