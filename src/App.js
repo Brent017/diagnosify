@@ -15,10 +15,10 @@ class App extends Component {
 
     this.state = {
       id: "",
-      username: "",
+      username: "Brent",
       password: "",
       email: "",
-      loading: true,
+      loading: false,
       isAuth: false
     };
   }
